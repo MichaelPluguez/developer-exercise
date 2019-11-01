@@ -13,11 +13,11 @@ class Exercise
       # check if word is longer than 4 characters
       if i.length > 4
         # check for end punctuation if there is end punctuation preserve it and append to str
-        if i[-1] =~ /[[:punct:]\s][^[:punct]\s]*\z/
+        if i[-1] =~ /[[:punct:]\s]/
           last_punct = i[-1]
         end
         # check if first letter of word to be replaced is capitalized
-        if i[0] =~ /[[:upper:]]/ #.match(c)
+        if i[0] =~ /[[:upper:]]/ 
           str = str.sub(i, "Marklar" + last_punct)
         else
           str = str.sub(i, "marklar" + last_punct)        
